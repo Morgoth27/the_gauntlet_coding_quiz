@@ -1,0 +1,47 @@
+* {
+    padding:0;
+    margin:0;
+    font-family: fantasy;
+    flex-wrap: wrap;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+    display: flexbox;
+    align-items: center;
+    justify-content: left;
+    padding-left: 4%;
+    padding-top: 4%;
+    background-color: honeydew;
+}
+
+
+#quizContainer {
+    display: flexbox;
+    max-width: 80vw;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2%;
+    padding-left: 2%
+}
+
+button {
+    font-size: larger;
+    padding: 10px;
+}
+button:hover {
+    padding: 13px;
+}
+
+.hide {
+    display: none;
+}
+
+
+
