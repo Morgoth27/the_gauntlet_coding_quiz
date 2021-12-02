@@ -1,4 +1,6 @@
-var questions = [
+var questions = document.getElementById('questions');
+// var buttons = document.getElementById('button');
+var questionContent = [
     {
         question: 'Where is the correct place to insert a JavaScript?',
         choices: {
@@ -39,10 +41,8 @@ var questions = [
         },
         correctAnswer: 3
     },
-]
-function hideWelcome () {
-    
-}
+];
+
 var startBtn = document.querySelector("#startBtn");
 var timerEl = document.querySelector("#timerEl");
 var secondsLeft = 60;
@@ -59,16 +59,40 @@ function setTime (){
             window.location.reload();
         }
     }, 1000);
-}
 
-question.choices.forEach(function(choice, i) {
-    var choiceBtn = document.createElement('button');
-    var choiceDiv = document.querySelector('.choices')
-    choiceBtn.setAttribute('value', choice)
-    choiceBtn.textContent = i + 1 + '. ' + choice;
-    choiceDiv.appendChild(choiceBtn)
-})
+    function startGame() {
+        currentQuestionIndex(0)
+    };
+
+
+};
+
+
 
 startBtn.addEventListener("click", setTime);
 
-//array of Qs, and within the array there is question content
+var questionPointer = 0;
+var currentQ = questions[questionPointer];
+
+function showNextQ() {
+
+};
+
+function nextQ () {
+    questionPointer++;
+    if (nextQ = 0 )
+    then (END GAME)
+};
+
+function answerQ(e) {
+
+    //which button was clicked in response
+    var buttonInfo = e.target;
+    var answer = buttonInfo.dataset.answer;
+
+    if (answer === currentQ.correctAnswer)
+    console.log(answer);
+
+}
+
+questions.addEventListener("click", answerQ);

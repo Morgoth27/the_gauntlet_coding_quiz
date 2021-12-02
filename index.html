@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/style.css">
     <title>JavaScript Quiz</title>
+    <style>
+            .hide {
+                    display:none;
+            }
+    </style>
 </head>
 
 <header>
@@ -28,14 +33,14 @@
         </div>
 
         <div class="quizSection">
-            <div class = "question1">Question 1</div>
-            <div class="choices"></div>
-            <!-- <button id="1-A">A</button>
-            <button id="1-B">B</button>
-            <button id="1-C">C</button>
-            <button id="1-D">D</button> -->
-
-            <button></button>
+            <h2>Question?</h2>
+            <div id = "questions">
+                <button id="1-A" data-answer="A">A</button>
+                <button id="1-B" data-answer="B">B</button>
+                <button id="1-C" data-answer="C">C</button>
+                <button id="1-D" data-answer="D">D</button>
+            </div>
+        </div>
             <br>
             <br>
         </div>
@@ -84,7 +89,7 @@
 
     </div>
 
-    <script src="./assets/script.js"></script>
+    <script src="./assets/new-script.js"></script>
 
 </body>
 </html>
