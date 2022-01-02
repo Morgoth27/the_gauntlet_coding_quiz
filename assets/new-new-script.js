@@ -39,6 +39,7 @@ function setTime (){
             alert("No time remaining, please start over.");
             window.location.reload();
         }
+
 //Text outlined in different color depending upon the timer escalation
         if (secondsLeft > 40) {
             timerContainer.style.textShadow = "-1px 0 inherit, 0 1px inherit, 1px 0 inherit, 0 -1px inherit"
@@ -50,14 +51,54 @@ function setTime (){
         }
 
         else {
-            timerContainer.style.textShadow = "-1px 0 red, 0 1px red, 1px 0 red, 0 -1px red"
+            timerContainer.style.textShadow = "0 0 12px red"
         }
 
-    }, 1000);
+
+        //functin for text to blink red at 5 second countdown
+        (function setTimeThree (){
+            if (secondsLeft === 5) {
+        
+            var blinkAlert = document.getElementById("timerEl").style,
+            f = false,
+            colorOne = 'black',
+            colorTwo = 'red';
+            // fontsizeOne = 'inherit',
+            // fontsizeTwo = fontsizeOne + 3
+        
+                setInterval (function() {
+                    blinkAlert.color = f ? colorOne : colorTwo,
+                    f = !f;
+                }, 100);
+
+                return setTimeThree
+        }}())
+
+
+    },    
+    1000);
 }
+
+// function setTimeThree (){
+//     if (secondsLeft === 55) {
+
+//     var blinkAlert = document.getElementById("timerEl").style,
+//     f = false,
+//     colorOne = 'black',
+//     colorTwo = 'red'
+//     // fontsizeOne = 'inherit',
+//     // fontsizeTwo = fontsizeOne + 3
+
+//         setInterval (function() {
+//             blinkAlert.color = f ? colorOne : colorTwo;
+//             f = !f;
+//         }, 300);
+// }}
+
 
 startBtn.addEventListener("click", setTime);
 startBtn.addEventListener("click", setTimeTwo);
+startBtn.addEventListener("click", setTimeThree);
 
 function addPoint (){
     if (correctChoice) {
