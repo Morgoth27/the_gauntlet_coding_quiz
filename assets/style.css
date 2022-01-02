@@ -5,15 +5,39 @@
     flex-wrap: wrap;
 }
 
+header {
+    position: relative;
+}
+
 body {
     height: 100vh;
     width: 100vh;
-    display: flexbox;
+    display: flex;
     align-items: center;
     justify-content: left;
     padding-left: 4%;
     padding-top: 4%;
     background-color: honeydew;
+    position: relative;
+}
+
+#timerContainer {
+    display: inline-flex;
+}
+
+#timerEl, #timerContainer {
+    text-shadow: #0000ffff;
+    font-size: 150%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    position: top;
+}
+
+.timerElBorder {
+    /* transform: scale(1);
+	animation: pulse 2s infinite; */
+    justify-content: center;
+    font-size: 200% !important;
+   animation: glow 2s ease-in-out infinite alternate;
 }
 
 
@@ -34,13 +58,39 @@ button {
     font-size: larger;
     padding: 10px;
 }
+
 button:hover {
-    padding: 13px;
+    box-shadow: 0 0 12px rgb(25, 39, 231);
+    transition: .5s;
 }
 
 .hide {
     display: none;
 }
 
+ /* @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            /text-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); 
+        }
+    
+        70% {
+            transform: scale(1);
+             text-shadow: 0 0 0 10px rgba(0, 0, 0, 0); 
+        }
+    
+        100% {
+            transform: scale(0.95);
+             text-shadow: 0 0 0 0 rgba(0, 0, 0, 0); 
+        }
+}  */
 
-
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
+}
