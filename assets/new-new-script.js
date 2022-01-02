@@ -11,8 +11,14 @@ var choicePointer = 0;
 //there was a delay in these items showing up upon click, so added a secondary function to the same button
 function setTimeTwo () {
     var timerEl = document.getElementById('timerEl');
+    var timerContainer = document.querySelector("#timerContainer");
     timerEl.insertAdjacentHTML("beforeBegin", '<div class="timerElBorder" id="timerElBorderL">⚔⟶</div>');
     timerEl.insertAdjacentHTML("afterEnd", '<div class="timerElBorder" id= "timerElBorderR">⟵⚔</div>');
+//fade in when clicked
+    timerContainer.classList.add("timerContainer", "fadeIn");
+    requestAnimationFrame(); {
+        timerContainer.classList.remove("fadeIn")
+    }
     return //is this return necessary? I have no idea
 }
 
@@ -22,6 +28,11 @@ function setTime (){
         secondsLeft--;
         // timerEl.innerHTML = "> > > " + secondsLeft + " seconds remaining. < < <";
         timerText = timerEl.textContent = secondsLeft + "   SECONDS REMAINING!";
+
+        // timerText.classList.add("timerContainer", "fadeIn");
+        // requestAnimationFrame(); {
+        //     target.classList.remove("fadeIn")
+        // }
         
         if (secondsLeft === 0) {
             clearInterval(timer);

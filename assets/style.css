@@ -63,6 +63,20 @@ body {
     justify-content: space-between;
 }
 
+.timerContainer {
+transition: opacity 8000ms;
+will-change: opacity;
+opacity: 0;
+}
+
+.timerContainer.fadeIn {
+    opacity: 100;
+}
+
+.timerContainer.fadeIn {
+    opacity: 100;
+}
+
 #timerEl, #timerContainer {
     /* text-shadow: #0000ffff; */
     font-size: 1.1em;
