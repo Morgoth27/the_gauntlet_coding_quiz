@@ -27,8 +27,7 @@ body {
     box-shadow: 5px 5px 20px;
     flex-direction: row;
     align-items: center;
-    padding-top: 2%;
-    padding-left: 2%
+    padding: 2%
 }
 
 button {
