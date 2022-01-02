@@ -81,7 +81,7 @@ function showNextQ() {
 function nextQ () {
     questionPointer++;
     if (nextQ = 0 )
-    then (END GAME)
+    then (ENDGAME)
 };
 
 function answerQ(e) {

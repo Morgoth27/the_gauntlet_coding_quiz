@@ -43,6 +43,7 @@ var questions = [
 function hideWelcome () {
     
 }
+
 var startBtn = document.querySelector("#startBtn");
 var timerEl = document.querySelector("#timerEl");
 var secondsLeft = 60;
