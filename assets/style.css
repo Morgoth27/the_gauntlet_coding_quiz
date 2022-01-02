@@ -1,51 +1,109 @@
+:root {
+    --text-border-color: rgb(54, 44, 44);
+    --background-color: rgb(254, 254, 255);
+}
+
 * {
-    padding:0;
-    margin:0;
-    font-family: fantasy;
+    padding: 0;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     flex-wrap: wrap;
+    
 }
 
 header {
     position: relative;
+    /* align-self: flex-start; */
+    width: 100vh;
+    color: black;
+    font-size: 1.9em;
+    letter-spacing: 3px;
+    /* -webkit-text-stroke-width: 0px; */
+    /* text-shadow: -1px 0 var(--text-border-color), 0 1px var(--text-border-color), 1px 0 var(--text-border-color), 0 -1px var(--text-border-color); */
+    /* text-rendering:optimizeLegibility; */
+}
+
+#titleHeaderTwo {
+    font-size: .8em;
+}
+
+h3 {
+    font-size: 1em;
 }
 
 body {
-    height: 100vh;
-    width: 100vh;
+    height: 90vh;
+    max-width: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    /* justify-content: center; */
     padding-left: 4%;
-    padding-top: 4%;
-    background-color: honeydew;
+    padding-top: 2%;
+    background-color: var(--background-color);
     position: relative;
+    background-image: url('./images/gauntlet2.png');
+    background-repeat: no-repeat;
+    background-position: right, bottom;
+    background-size: inherit;
+    background-position-y: 35pt;
+}
+
+#entireBody {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 #timerContainer {
     display: inline-flex;
+    position: relative;
+    overflow: auto;
+    min-width: auto;
+    align-items: center;
+    min-width: 100%;
+    justify-content: space-between;
 }
 
 #timerEl, #timerContainer {
-    text-shadow: #0000ffff;
-    font-size: 150%;
+    /* text-shadow: #0000ffff; */
+    font-size: 1.1em;
+    max-width: 100%;
+    max-height: 100px;
+    flex-shrink: 1;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-    position: top;
 }
 
 .timerElBorder {
     /* transform: scale(1);
 	animation: pulse 2s infinite; */
-    justify-content: center;
+    /* justify-content: center; */
     font-size: 200% !important;
-   animation: glow 2s ease-in-out infinite alternate;
+    animation: glow .5s ease-in-out infinite alternate;
 }
 
+#timerElBorderL {
+    padding-left: 2%;
+}
+
+#timerElBorderR {
+    padding-right:2%;
+}
+
+#score {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+    position: relative;
+    align-self: right;
+    width: 50px;
+    height: 50px;
+}
 
 #quizContainer {
+    position: relative;
     display: flexbox;
-    max-width: 80vw;
-    width: 80%;
-    height: 80%;
+    max-width: 100vh;
+    width: 100vh;
+    height: 60%;
     background-color: white;
     border: 1px solid black;
     box-shadow: 5px 5px 20px;
@@ -87,10 +145,10 @@ button:hover {
 
 @keyframes glow {
     from {
-      text-shadow: 0 0 20px #2d9da9;
+      text-shadow: 0 0 20px #321c81;
     }
     to {
-      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+      text-shadow: 0 0 30px #362788, 0 0 10px #5d3d9c;
     }
   }
 }
