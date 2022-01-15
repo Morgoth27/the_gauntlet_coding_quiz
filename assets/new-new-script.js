@@ -4,8 +4,6 @@ var rightWrong = document.querySelector("#rightWrong");
 
 var timerEl = document.querySelector("#timerEl");
 var timerContainer = document.querySelector("#timerContainer");
-var timer;
-var secondsLeft = 61;
 
 var userScore = document.querySelector("#userScore");
 var score = 0;
@@ -17,6 +15,8 @@ var currentQuestionIndex = 0;
 var choicePointer = 0;
 var currentChoice;
 // var rightWrong = document.querySelector("#yesNo");
+var secondsLeft = 61;
+var timer;
 
 var winner;
 var loser;
@@ -51,10 +51,10 @@ function setTimeTwo () {
 }
 
 function setTime (){
-        timer = setInterval (function() {
+     timer = setInterval (function() {
         secondsLeft--;
         // timerEl.innerHTML = "> > > " + secondsLeft + " seconds remaining. < < <";
-        timerText = timerEl.textContent = secondsLeft + "   seconds remaining!";
+        timerText = timerEl.textContent = secondsLeft + "   SECONDS REMAINING!";
         // timerText.classList.add("timerContainer", "fadeIn");
         // requestAnimationFrame(); {
         //     target.classList.remove("fadeIn")
@@ -107,7 +107,7 @@ function quizOver () {
 
     
     if (winner === true) {
-        var winner = document.createElement('h2');
+        winner = document.createElement('h2');
         winner.textContent = `You Won! Score: ${secondsLeft}`;
         quizCard.appendChild(winner)
     }
@@ -129,8 +129,6 @@ function quizOver () {
 //         }, 300);
 // }}
 
-
-//now that i know .foreach, I will use that in the future. I wasn't sure if I would be penalized for using future code, since i am turning this in late.
 
 // function addPoint (){
 //     var rightWrong = document.querySelector("#rightWrong");
