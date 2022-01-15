@@ -3,8 +3,9 @@ var startBtn = document.querySelector("#startBtn");
 var rightWrong = document.querySelector("#rightWrong");
 
 var timerEl = document.querySelector("#timerEl");
-
 var timerContainer = document.querySelector("#timerContainer");
+var timer;
+var secondsLeft = 61;
 
 var userScore = document.querySelector("#userScore");
 var score = 0;
@@ -16,7 +17,6 @@ var currentQuestionIndex = 0;
 var choicePointer = 0;
 var currentChoice;
 // var rightWrong = document.querySelector("#yesNo");
-var secondsLeft = 61;
 
 var winner;
 var loser;
@@ -30,6 +30,10 @@ function startQuiz () {
     setTime ();
     setTimeTwo (); 
     showQ ();
+}
+
+function restart () {
+    window.location.reload();
 }
 
 //there was a delay in these items showing up upon click, so added a secondary function to the same button
@@ -47,10 +51,10 @@ function setTimeTwo () {
 }
 
 function setTime (){
-    let timer = setInterval (function() {
+        timer = setInterval (function() {
         secondsLeft--;
         // timerEl.innerHTML = "> > > " + secondsLeft + " seconds remaining. < < <";
-        timerText = timerEl.textContent = secondsLeft + "   SECONDS REMAINING!";
+        timerText = timerEl.textContent = secondsLeft + "   seconds remaining!";
         // timerText.classList.add("timerContainer", "fadeIn");
         // requestAnimationFrame(); {
         //     target.classList.remove("fadeIn")
@@ -58,7 +62,7 @@ function setTime (){
         if (secondsLeft < 0) {
             clearInterval(timer);
             alert("No time remaining, please start over.");
-            window.location.reload();
+            restart ();
         }
 //Text outlined in different color depending upon the timer escalation
         if (secondsLeft > 30) {
@@ -97,11 +101,12 @@ function setTime (){
 }
 
 function quizOver () {
-    quizCard.innerHTML = '';
     ifWinner();
-    if (winner === true) {
-        clearInterval(timer);
+    clearInterval(timer);
+    quizCard.innerHTML = '';
 
+    
+    if (winner === true) {
         var winner = document.createElement('h2');
         winner.textContent = `You Won! Score: ${secondsLeft}`;
         quizCard.appendChild(winner)
@@ -237,7 +242,7 @@ function qResponse (e) {
         userScore.textContent = score + 1;
         rightWrong.textContent = "Correct!";
         console.log("Yay! Correct.");
-
+    
     } else {
 
         console.log('Wrong! Timer minus 10 seconds.');
@@ -246,7 +251,7 @@ function qResponse (e) {
         if (secondsLeft <= 0) {
             secondsLeft = 0;
             alert("No time remaining, please start over.");
-            window.location.reload();
+            restart();
             }
     }
 }
