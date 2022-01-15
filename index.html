@@ -99,11 +99,8 @@
         
                         <br>
    
-        <div id ="moreControls" class="moreControls hide">
-            <button id = "submitButton">Submit</button>
-        </div>
 
-        <div id="resultsCard">
+        <div id="resultsCard" class="hide">
             <div id = "rightWrong"></div>
             <br>
             <div id="scoreCard" class="hide">
@@ -111,6 +108,15 @@
                 <span id="total-score">/ 7</span>
             </div>
         </div>
+        
+        <div id="submitScore" class = "hide">
+            <label class ="name" for="name">Name: </label><input type = "text" class ="name" id = "name" name="name" required minlength="2" maxlength="14" size="24">
+            <br>
+            <br>
+            <button id = "submitButton">Submit</button>
+            <br>
+        </div>
+       
 
             <br>
             <br>

@@ -7,7 +7,7 @@ var timerContainer = document.querySelector("#timerContainer");
 
 var userScore = document.querySelector("#userScore");
 var score = 0;
-var highScore = [];
+var topScores = [];
 
 var quizCard = document.querySelector("#quizSection");
 var currentQ = document.querySelector("#questionUL");
@@ -110,7 +110,20 @@ function quizOver () {
         winner = document.createElement('h2');
         winner.textContent = `You Won! Score: ${secondsLeft}`;
         quizCard.appendChild(winner)
+        submitScore();
     }
+}
+
+function submitScore () {
+
+    var resultsCard = document.querySelector("#resultsCard");
+    resultsCard.classList.replace("show", "hide");
+
+    var userScore = document.querySelector("#scoreCard");
+    userScore.classList.replace("show", "hide")
+
+    var submitScore = document.querySelector("#submitScore");
+    submitScore.classList.replace("hide", "show");
 }
 
 // function setTimeThree (){
@@ -167,7 +180,7 @@ function ifWinner(){
     };
 };
 
-    function hideStart () {
+function hideStart () {
     var startControls = document.getElementById("startControls");
     startControls.classList.add("hide");
     //this worked without defining startControls w a variable, but for the sake of consistency and sanity, i will just do it this way. Same with titleHeaderThree
@@ -177,6 +190,9 @@ function ifWinner(){
 
     // var questionOne = document.getElementById("questionOne");
     // questionOne.classList.replace("hide", "show");
+
+    var resultsCard = document.querySelector("#resultsCard");
+    resultsCard.classList.replace("hide", "show");
 
     var userScore = document.querySelector("#scoreCard");
     userScore.classList.replace("hide", "show")
@@ -211,7 +227,9 @@ function showQ () {
     quizCard.innerHTML = '';
     currentQ = document.createElement('h2');
     currentQ.textContent = questions[choicePointer].question;
+    
     quizCard.appendChild(currentQ);
+    
 
     for ( var i = 0; i < questions[choicePointer].choices.length; i++) {
         currentChoice = document.createElement('button');
@@ -253,6 +271,8 @@ function qResponse (e) {
             }
     }
 }
+
+topScores = JSON.parse(localStorage.getItem("topScores")) || [];
 
     //Array of questions to be cycled through
 
