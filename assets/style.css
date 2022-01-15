@@ -69,12 +69,12 @@ will-change: opacity;
 opacity: 0;
 }
 
-.timerContainer.fadeIn {
+.fadeIn {
     opacity: 100;
 }
 
-.timerContainer.fadeIn {
-    opacity: 100;
+.fadeOut {
+    opacity: 0;
 }
 
 #timerEl, #timerContainer {
@@ -136,9 +136,6 @@ button:hover {
     transition: .5s;
 }
 
-.hide {
-    display: none;
-}
 
  /* @keyframes pulse {
         0% {
@@ -165,4 +162,18 @@ button:hover {
       text-shadow: 0 0 30px #362788, 0 0 10px #5d3d9c;
     }
   }
-}
+
+
+.hide {
+    display: none;
+    transition: opacity 8000ms;
+    will-change: opacity;
+    opacity: 0;
+    }
+    
+.show {
+    display: block;
+    transition: opacity 4000ms;
+    will-change: opacity;
+    opacity: 100;
+    }
